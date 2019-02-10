@@ -7,7 +7,7 @@ while (isNaN(H)) {
 	H = prompt('Введите число! Высота', 0)
 };
 var res = S*H,
-	R = Math.sqrt(res/Math.PI*H);
+	R = Math.sqrt(res/(Math.PI*H));
 
 document.write("**************<br><br>");
 
