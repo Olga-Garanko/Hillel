@@ -13,10 +13,10 @@ for (i=a; i <= b; i++){
 }
 console.log('------');*/
 do {
-	c = +prompt('Введите простое число!', 0)
-} while (isNaN(c));
+	c = +prompt('Введите простое число > 1!', 0)
+} while ((isNaN(c)) || (c <= 1));
 
-for (i=2; i < c; i++){
+for (i=2; i <= c; i++){
 	if (c%i == 0) {
 		console.log('число не простое');
 		break;
