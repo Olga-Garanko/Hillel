@@ -54,3 +54,16 @@ console.log(`Индексы елементов, значения которых 
 for (i=0; i < A.length; i++){
 	if ((A[i] >= startValue) && (A[i] <= finishValue))  { console.log(i); }
 }
+
+B = [2, 3, 2, 5, 1, 0, 0, 0];
+console.log('Массив В', B);
+for (i = 0; i < B.length; i++) {
+	for (j = 0; j < B.length; j++) {
+		if (i != j) {
+			if (B[i] == B[j]) {
+				B.splice(i,1);
+			}
+		}
+	}
+}
+console.log('Массив В без повторов',B);
