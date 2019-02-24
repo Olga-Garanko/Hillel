@@ -25,7 +25,7 @@ function doMath(op1, operator, op2){
 	    result = op1 * op2;
 	    break;
 	  case '/':
-	  	if (op2 == 0) { console.log("Деление на 0 невозможно"); result = underfined;}
+	  	if (op2 == 0) { console.log("Деление на 0 невозможно"); result = undefined;}
 	  	else { result = op1 / op2; }
 	  	break;
 	  case '%':
