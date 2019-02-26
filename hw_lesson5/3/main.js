@@ -3,18 +3,20 @@
 // Создать функцию, которая убирает из строки все символы, которые мы передали вторым аргументом.
 // 'func("hello world", ['l', 'd'])' вернет нам "heo wor"
 
-str = "Hello World";
-symb = ['o', 'd'];
+str = 'Hello World';
+symb = ['o', 'd', 'l'];
 console.log(str, symb);
 function newString(str, symb){
 	for (i = 0; i < symb.length; i++) {
-		if (str.indexOf(symb[i]) != -1) {
-			regExpress = symb[i] + "/g";
-			console.log(regExpress);
-			newStr = str.replace(regExpress,'');
+		for (j = 0; j <= str.length; j++) {
+			if (str[j] == symb[i]) {
+				reg = new RegExp(symb[i], "g");
+				str = str.replace(reg,'');
+			}
 		}
 	}
-	return newStr;
+	return str;
 }
 
-console.log(newString(str, symb));
+res = newString(str, symb);
+console.log(res);
