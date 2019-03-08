@@ -6,16 +6,22 @@
 // --------------
 // реализовать функции sum, div, mul, power
 // `doFunction(16, -23, mul); // 16*(-23)`
-
-function doFunction (a, b, func) {
-	switch(func) {
-		case 'power': return Math.pow(a, b);
-		case 'sum': return a + b;
-		case 'div': return a / b;
-		case 'mul': return a * b;
-		default: return;
-	}
+function power (a, b){
+	return Math.pow(a, b);
+}
+function sum (a, b){
+	return a + b;
+}
+function div (a, b){
+	return a / b;
+}
+function mul (a, b){
+	return a * b;
 }
 
-res = doFunction(16, -23, 'sum');
+function doFunction (a, b, func) {
+	return func(a, b);
+}
+
+res = doFunction(16, -23, sum);
 console.log(res);
