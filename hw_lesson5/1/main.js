@@ -20,29 +20,30 @@ console.log(B);
 
 function compareArraySum () {
 	sumArray = [];
-	for (i = 0; i < arguments.length; i++) {
-		sumArray.push(sumCalculate(arguments[i]));
-		console.log(sumCalculate(arguments[i]));
+	for (j = 0; j < arguments.length; j++) {
+		sumArray.push(sumCalculate(arguments[j]));
+		console.log(sumCalculate(arguments[j]));
 	}
-	max(sumArray);
+	maxIndex = max(sumArray);
 	console.log(maxIndex);
 	console.log(arguments[maxIndex]);
 	return arguments[maxIndex];
 }
 function sumCalculate (arr) {
-	for (j = 0, sum=0; j < arr.length; j++) {
-		if (typeof arr[j] == 'number'){
-			sum = sum + arr[j];
+	for (k = 0, sum=0; k < arr.length; k++) {
+		if (typeof arr[k] == 'number'){
+			sum = sum + arr[k];
 		}
 	}
 	return sum;
 }
 function max (arr){
 	max = arr[0];
-	for (k=0; k < arr.length; k++){
-		if (arr[k] >= max) {max = arr[k]; maxIndex = k;};
+	for (l=0; l< arr.length; l++){
+		if (arr[l] >= max) {max = arr[l]; maxIndex = l;};
 	}
 	console.log('max', max, 'maxIndex', maxIndex);
+	return maxIndex;
 }
 
 compareArraySum(A,B);

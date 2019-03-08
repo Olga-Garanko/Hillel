@@ -4,4 +4,33 @@
 + посчитать средний возраст
 + определить представителей какого пола больше
 + вывести ответы в консоль*/
+var person = [
+	{
+		name: 'Kris00',
+		sex: 'M',
+		birth: 1999
+	},
+	{
+		name: 'Kris01',
+		sex: 'M',
+		birth: 2004
+	},
+	{
+		name: 'Kris02',
+		sex: 'F',
+		birth: 2121
+	},
+	{
+		name: 'Kris03',
+		sex: 'M',
+		birth: 1980
+	},
+	{
+		name: 'Kris04',
+		sex: 'F',
+		birth: 1999
+	},
+]
+
+console.log(person)
 
