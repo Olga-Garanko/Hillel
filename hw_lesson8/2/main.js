@@ -4,9 +4,12 @@
 function revertObject(obj) {
 	let objReversed = {}
 	console.log('Исходный объект', obj)
-	Object.keys(obj).forEach((key) => {
+    for (let key in obj) {
 		objReversed[obj[key]] = key
-	})
+    }
+/*	Object.keys(obj).forEach((key) => {
+		objReversed[obj[key]] = key
+	})*/
 	return objReversed
 }
 console.log('Результат', revertObject({name: 'mykola', age: 56, valid: false}))
