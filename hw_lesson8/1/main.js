@@ -18,7 +18,7 @@ var person = [
 	{
 		name: 'Kris02',
 		sex: 'F',
-		birth: 2121
+		birth: 2000
 	},
 	{
 		name: 'Kris03',
@@ -30,7 +30,38 @@ var person = [
 		sex: 'F',
 		birth: 1999
 	},
+	{
+		name: 'Kris05',
+		sex: 'M',
+		birth: 1980
+	},
+	{
+		name: 'Kris06',
+		sex: 'F',
+		birth: 2004
+	},
 ]
-
+function agesSum(person) {
+	let today = new Date()
+	let year = today.getFullYear()
+	let sum = 0
+	person.forEach((item) => {
+		let age = year - +item.birth
+		console.log(age)
+		sum+= age
+	})
+	return sum
+}
+function sex(person) {
+	let womenCounter = 0, menCounter  = 0;
+	person.forEach((item) => {
+		(item.sex === 'M') ? menCounter++ : womenCounter++
+		if (womenCounter > menCounter) { console.log('В массиве больше женщин') }
+		else if ( womenCounter < menCounter ) { console.log('В массиве больше мужчин') }
+		else console.log('Женщин and мужчин поровну')
+	})
+}
 console.log(person)
+console.log('Сумма возрастов', agesSum(person))
+console.log(sex(person))
 
