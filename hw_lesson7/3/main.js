@@ -33,6 +33,7 @@ obj = {
         p: 13
     }
 }
+console.log('obj', obj);
 
 function convert(obj) {
     for (var key in obj) {
@@ -46,15 +47,44 @@ function convert(obj) {
 }
 
 convert(obj);
-console.log(obj);
+console.log('convert', obj);
 
 /*Написать методы push, join, reverse самостоятельно. Их функциональность должна соответствовать стандартным методам массивов.
 list.myPush(); list.myJoin(); list.myReverse();*/
-function myPush(obj) {
-    for (var key in obj) {
 
-    }
+//------PUSH
+function myPush(obj, newKey, newValue) {
+	obj[newKey] = newValue
+    return obj
 }
+console.log('myPush', myPush(obj, 'newKey', 'newValue'));
 
-myPush(obj);
-console.log(obj);
+//----------- JOIN
+obj2 = {
+    x: 10,
+    y: 20,
+    inner: 30,
+    foo2: 13
+}
+function myJoin() {
+	let objJoined = {}
+	for (var i = 0; i < arguments.length; i++) {
+	    for (var key in arguments[i]) {
+	    	objJoined[key] = arguments[i][key]
+	    }		
+	}
+    return objJoined
+}
+obj = myJoin(obj, obj2)
+console.log('myJoin', myJoin(obj, obj2))
+
+//------- REVERSE
+function myReverse(obj) {
+	let objReversed = {}
+    for (let key in obj) {
+		objReversed[obj[key]] = key
+    }
+    obj = objReversed
+	return obj
+}
+console.log('myReverse', myReverse(obj))
