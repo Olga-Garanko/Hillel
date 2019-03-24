@@ -7,13 +7,23 @@ const inputs = [...document.querySelectorAll('.input')]
 
 /*setInterval(() => {
 	let result = ''
-	inputs.forEach(item => result+= item.value)
+	inputs.forEach((item, i) => {
+		if (item.value !== '') {
+			result+= `${item.value}, `
+		}
+	})
+	result = result.substring(0, result.length - 2)
 	textarea.value = result
 }, 1000)*/
 
 const getInputsValue = () => {
 	let result = ''
-	inputs.forEach(item => result+= item.value)
+	inputs.forEach((item, i) => {
+		if (item.value !== '') {
+			result+= `${item.value}, `
+		}
+	})
+	result = result.substring(0, result.length - 2)
 	textarea.value = result
 }
 setInterval(getInputsValue, 1000)
