@@ -7,7 +7,7 @@ const inputs = [...document.querySelectorAll('.input')]
 
 /*setInterval(() => {
 	let result = ''
-	inputs.forEach(item => {
+	inputs.forEach((item, i) => {
 		if (item.value !== '') {
 			result+= `${item.value}, `
 		}
@@ -18,7 +18,7 @@ const inputs = [...document.querySelectorAll('.input')]
 
 const getInputsValue = () => {
 	let result = ''
-	inputs.forEach(item => {
+	inputs.forEach((item, i) => {
 		if (item.value !== '') {
 			result+= `${item.value}, `
 		}
