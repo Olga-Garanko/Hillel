@@ -11,10 +11,10 @@ setInterval(() => {
 	const width = document.documentElement.clientWidth
 	const height = document.documentElement.clientHeight
 	blocks.forEach(item => {
-		let elemWidth = parseInt(getComputedStyle(item).width)
-		let elemHeight = parseInt(getComputedStyle(item).height)
-		let randomTop = Math.floor(Math.random()*(height - elemWidth))
-		let randomLeft = Math.floor(Math.random()*(width - elemHeight))
+		const elemWidth = parseInt(getComputedStyle(item).width)
+		const elemHeight = parseInt(getComputedStyle(item).height)
+		const randomTop = Math.floor(Math.random()*(height - elemWidth))
+		const randomLeft = Math.floor(Math.random()*(width - elemHeight))
 		item.style.top = randomTop + 'px'
 		item.style.left = randomLeft + 'px'
 		console.log(item, width, height, elemWidth, elemHeight, randomTop, randomLeft)

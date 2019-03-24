@@ -3,14 +3,35 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Lesson 12</title>
+	<style>
+		.block{
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background-color: blue;
+			transition: all 1s ease;
+		}
+		.block:nth-child(2){
+			top: 0;
+			left: 110px;
+			z-index: 2;
+			background-color: green;
+		}
+		.block:nth-child(3){
+			top: 0;
+			left: 220px;
+			z-index: 3;
+			background-color: yellow;
+		}
+	</style>
 </head>
 <body>
-	<div class="form">
-		<input type="text" class="input"><br><br>
-		<input type="text" class="input"><br><br>
-		<input type="text" class="input"><br><br>
-		<textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
-	</div>
+	<div class='block'> </div>
+	<div class='block'> </div>
+	<div class='block'> </div>
 	<script src="./main.js"></script>
 </body>
 </html>

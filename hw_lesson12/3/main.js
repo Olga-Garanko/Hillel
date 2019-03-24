@@ -1,29 +1,28 @@
-/* домашнее задание 21
-#1
-1) Есть 3 `input`. Выводить в `textarea` содержимое всех полей ввода через запятую. Использовать setInterval.*/
+/*Домашнее задание 23
+#3
+Каждое перемещение из задания №2 также меняет цвет блока на случайный. Создать фунцию getRandColor()*/
 
-const textarea = document.querySelector('.textarea')
-const inputs = [...document.querySelectorAll('.input')]
+const blocks = [...document.querySelectorAll('.block')]
 
-/*setInterval(() => {
-	let result = ''
-	inputs.forEach((item, i) => {
-		if (item.value !== '') {
-			result+= `${item.value}, `
-		}
+// setInterval(callback, repeat)
+
+setInterval(() => {
+	const width = document.documentElement.clientWidth
+	const height = document.documentElement.clientHeight
+	blocks.forEach(item => {
+		const elemWidth = parseInt(getComputedStyle(item).width)
+		const elemHeight = parseInt(getComputedStyle(item).height)
+		const randomTop = Math.floor(Math.random()*(height - elemWidth))
+		const randomLeft = Math.floor(Math.random()*(width - elemHeight))
+		item.style.top = randomTop + 'px'
+		item.style.left = randomLeft + 'px'
+
+		const randomR = Math.floor(Math.random()*255)
+		const randomG = Math.floor(Math.random()*255)
+		const randomB = Math.floor(Math.random()*255)
+
+		item.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB})`
+
+		console.log(item)
 	})
-	result = result.substring(0, result.length - 2)
-	textarea.value = result
-}, 1000)*/
-
-const getInputsValue = () => {
-	let result = ''
-	inputs.forEach((item, i) => {
-		if (item.value !== '') {
-			result+= `${item.value}, `
-		}
-	})
-	result = result.substring(0, result.length - 2)
-	textarea.value = result
-}
-setInterval(getInputsValue, 1000)
+}, 2000)
