@@ -6,6 +6,13 @@ const blocks = [...document.querySelectorAll('.block')]
 
 // setInterval(callback, repeat)
 
+const getRandColor = (item) => {
+		const randomR = Math.floor(Math.random()*255)
+		const randomG = Math.floor(Math.random()*255)
+		const randomB = Math.floor(Math.random()*255)
+		item.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB})`
+}
+
 setInterval(() => {
 	const width = document.documentElement.clientWidth
 	const height = document.documentElement.clientHeight
@@ -17,11 +24,7 @@ setInterval(() => {
 		item.style.top = randomTop + 'px'
 		item.style.left = randomLeft + 'px'
 
-		const randomR = Math.floor(Math.random()*255)
-		const randomG = Math.floor(Math.random()*255)
-		const randomB = Math.floor(Math.random()*255)
-
-		item.style.backgroundColor = `rgba(${randomR}, ${randomG}, ${randomB})`
+		getRandColor(item)
 
 		console.log(item)
 	})
