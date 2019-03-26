@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 13</title>
+	<style>
+		.diagram{
+			height: 216px;
+			width: 30px;
+			border: 1px solid black;
+			display: flex;
+			justify-content: flex-end;
+			flex-direction: column;
+		}
+		.diagram__percent{
+			height: 0;
+			background-color: red;
+			transition: height 1s;
+		}
+		.diagram__value{
+			height: 0;
+			background-color: green;
+			transition: height 1s;
+		}
+	</style>
+</head>
+<body>
+	<input type="range" class="range" min="0" max="100" value=80><br><br>
+	<input type="text" class="input" value=80><br><br>
+	<div class="diagram">
+		<div class="diagram__percent"></div>
+		<div class="diagram__value"></div>
+	</div>
+	<script src="./main.js"></script>
+</body>
+</html>
