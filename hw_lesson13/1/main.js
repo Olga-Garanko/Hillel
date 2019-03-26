@@ -9,9 +9,9 @@
 Красный блок отображает количество комиссии. Например Значение выбора 100, комиссия будет 8%. Результирующая сумма: 108. Высота красного блока - 8px*/
 
 
-let init = () => {
-	let textInput = document.querySelector('.input')
-	let rangeInput = document.querySelector('.range')
+let onLoad = () => {
+	let textInput = document.querySelector('.text-input')
+	let rangeInput = document.querySelector('.range-input')
 	let diagramValue = document.querySelector('.diagram__value')
 	let diagramPercent = document.querySelector('.diagram__percent')
 	let percent = 0
@@ -35,4 +35,4 @@ let init = () => {
 	textInput.addEventListener('change', change)
 	rangeInput.addEventListener('change', change)
 }
-window.addEventListener('load', init)
+window.addEventListener('load', onLoad)
