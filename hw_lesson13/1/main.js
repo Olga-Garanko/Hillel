@@ -10,29 +10,29 @@
 
 
 let onLoad = () => {
-	let textInput = document.querySelector('.text-input')
+	let numberInput = document.querySelector('.number-input')
 	let rangeInput = document.querySelector('.range-input')
 	let diagramValue = document.querySelector('.diagram__value')
 	let diagramPercent = document.querySelector('.diagram__percent')
 	let percent = 0
 
 	let calculate = (input) => {
-		diagramValue.style.height = input*2 + 'px'
+		diagramValue.style.height = input + 'px'
 		if ((input > 75) && (input <= 100)) percent = 8
 		if ((input > 50) && (input <= 75)) percent = 8
 		if ((input > 20) && (input <= 50)) percent = 6
 		if ((input > 0) && (input <= 20)) percent = 4
-		diagramPercent.style.height = (input*percent/100)*2 + 'px'
+		diagramPercent.style.height = input*percent/100 + 'px'
 	}
 
 	calculate(80)
 
 	let change = (e) => {
-		let input = textInput.value = rangeInput.value = e.target.value
+		let input = numberInput.value = rangeInput.value = e.target.value
 		calculate(input)
 	}
 
-	textInput.addEventListener('change', change)
-	rangeInput.addEventListener('change', change)
+	numberInput.addEventListener('input', change)
+	rangeInput.addEventListener('input', change)
 }
 window.addEventListener('load', onLoad)
