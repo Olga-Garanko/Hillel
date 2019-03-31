@@ -6,6 +6,11 @@
 	
 	Персонаж - это квадрат, имеющий размеры 100 на 100 пикселей.
 	Прыжок - это анимация движения объекта вверх на `h` пикселей и возврат в изначальное положение (до прыжка)*/
+
+/*Домашнее задание 26
+#2
+При нажатии на CTRL персонаж должен "присесть" (уменьшиться в размерах по высоте на 40%, по ширине - увеличится на 15%)*/
+
 let platformer = document.querySelector('.platformer')
 const step = 40
 const height = 50
@@ -31,9 +36,9 @@ function move(e) {
 		case 40:	 // клавиша вниз
 			platformer.style.top = parseInt(platformer.style.top) + step + 'px';
 			break;
+		case 17: 
+			platformer.style.transform = 'scaleY(0.6) scaleX(1.15)'
+			setTimeout(() => platformer.style.transform = 'scaleY(1.0) scaleX(1.0)', 1000)
 	}
 }
 document.addEventListener('keydown', move)
-/*Домашнее задание 26
-#2
-При нажатии на CTRL персонаж должен "присесть" (уменьшиться в размерах по высоте на 40%, по ширине - увеличится на 15%)*/
