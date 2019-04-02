@@ -1,3 +1,8 @@
+/*Домашнее задание 27
+#1
+Реализовать контекстное (event = contextmenu) меню. Список хранить в памяти. Почитать про event.preventDefault()
+Хранить в списке action - название функции которая будет выполнятся при нажатии на пункт меню из задания №1.*/
+
 let context = document.querySelector('.context')
 let list = [
 			{title: 'Hello', action: function() {console.log('1')}},

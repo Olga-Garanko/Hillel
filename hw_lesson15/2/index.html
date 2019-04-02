@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lesson 15</title>
+	<style>
+		.context{
+			display: none;
+			position: fixed;
+			z-index: 2;
+		}
+		.context.active{
+			display: block;
+		}
+		.platformer{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 40%;
+			left: 40%;
+			background-color: lightblue;
+			transition: all 1s;
+		}
+	</style>
+</head>
+<body>
+	<ul class="context"></ul>
+	<div class="platformer"></div>
+	<script src="./main.js"></script>
+</body>
+</html>
