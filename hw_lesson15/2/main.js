@@ -26,7 +26,6 @@ let resetColor = (e) => {
 	platformer.style.backgroundColor = bgColor
 }
 
-let context = document.querySelector('.context')
 let list = [
 			{title: 'Jump', action: move},
 			{title: 'Remove', action: remove},
@@ -34,11 +33,18 @@ let list = [
 			{title: 'ChangeColor', action: changeColor},
 			{title: 'ResetColor', action: resetColor}
 			]
-for(let i = 0; i < list.length; i++){
-    let li = document.createElement('li')
-    li.innerHTML = list[i].title
-    li.addEventListener('click', list[i].action)
-    context.appendChild(li)
+let context = document.querySelector('.context')
+if (!context) {
+	let ul = document.createElement('ul')
+	ul.classList.add('context')
+	for(let i = 0; i < list.length; i++){
+	    let li = document.createElement('li')
+	    li.innerHTML = list[i].title
+	    li.addEventListener('click', list[i].action)
+	    ul.appendChild(li)
+	}
+	document.body.appendChild(ul)
+	context = document.querySelector('.context')
 }
 
 let contextmenu = (e) => {
