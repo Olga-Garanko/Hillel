@@ -1,6 +1,5 @@
 /*Домашнее задание 28
 #2
-Применить меню к домашке с лекции №14 (персонаж). Создать actions: Jump, Remove, ChangeColor.
 Меню должно всегда открыватся в окне, не создавая скрола.*/
 
 
@@ -34,9 +33,6 @@ let list = [
 			{title: 'ChangeColor', action: changeColor},
 			{title: 'ResetColor', action: resetColor}
 			]
-
-let contextWidth;
-let contextHeight;
 let context = document.querySelector('.context')
 if (!context) {
 	let ul = document.createElement('ul')
@@ -56,20 +52,14 @@ if (!context) {
 let contextmenu = (e) => {
 	e.preventDefault()
 	context.classList.add('active')
-	context.style.top = e.clientY + 'px'
-	context.style.left = e.clientX + 'px'
+	let rectObject = context.getBoundingClientRect()
+	let width = window.innerWidth
+	let height = window.innerHeight
+	e.clientX + rectObject.width > width ? context.style.left = e.clientX - rectObject.width + 'px' : context.style.left = e.clientX + 'px'
+	e.clientY + rectObject.height > height ? context.style.top = e.clientY - rectObject.height + 'px': context.style.top = e.clientY + 'px'
 }
 document.addEventListener('contextmenu', contextmenu)
+
 document.addEventListener('click', (e) => {
 	if (!context.contains(e.target)) context.classList.remove('active')
 })
-
-let positionCheck = () => {
-	let width = window.innerWidth
-	let height = window.innerHeight
-	console.log(width, height, contextWidth, contextHeight);
-}
-positionCheck()
-
-
-
