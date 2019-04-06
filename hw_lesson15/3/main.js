@@ -33,6 +33,7 @@ let list = [
 			{title: 'ChangeColor', action: changeColor},
 			{title: 'ResetColor', action: resetColor}
 			]
+
 let context = document.querySelector('.context')
 if (!context) {
 	let ul = document.createElement('ul')
