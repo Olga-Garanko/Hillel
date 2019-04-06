@@ -25,17 +25,13 @@ window.onload = function(){
         let title = item.querySelectorAll('td')[0].innerHTML
         let price = item.querySelectorAll('td')[1].innerHTML
         return (title && price)
-    }).forEach(item => {
-        let title = item.querySelectorAll('td')[0].innerHTML
-        let price = item.querySelectorAll('td')[1].innerHTML
-        console.log(title + ' - ' + price)
-   	})
-
-    let prices = [...document.querySelectorAll('.cinema__item td:last-child')]
-    let sum = prices
-    				.filter(item => {return !!(item.innerHTML)})
-    				.reduce((prev, next) => {return prev + parseInt(next.innerHTML)}, 0)
-	console.log(sum);		
+    }).reduce((prev, next) => {
+    	let title = next.querySelectorAll('td')[0].innerHTML
+    	let price = next.querySelectorAll('td')[1].innerHTML
+    	console.log(title + ' - ' + price)
+    	return prev + parseInt(price)
+    }, 0)
+	console.log(valuedFilms);		
 }
 
 
