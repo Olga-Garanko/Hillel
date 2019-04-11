@@ -15,13 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 		let formData = new FormData()
 		formData.append("surname", surname.value)
 		formData.append("age", age.value)
-		let letterRegExp  = /[a-zа-яієїґ\'\s]/i
+		let letterRegExp  = /[a-zа-яієїґ]/i
 		let numberRegExp  = /[0-9]/i
 		if (!numberRegExp.test(surname.value) && !letterRegExp.test(age.value)) {
 			var xhr = new XMLHttpRequest();
 			xhr.open('POST', '/registration', true);
 			xhr.send(formData);
-		} else { console.log(data is not valid) }
+		}
+		else { console.log('data is not valid') }
 	}
 
 	button.addEventListener('click', sendData)
