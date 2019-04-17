@@ -1,6 +1,6 @@
 /* написать код, который сформирует 2 запроса за различными файлам json. (data.json, data2.json). В файлах лежат массивы подобные по структуре. Склеить 2 массива и вывести результат в консоль*/
 
-let result = []
+/*let result = []
 let ajaxQuery = new Promise(function(resolve, reject){
 	let xhr = new XMLHttpRequest()
 	xhr.open('GET', '/data.json', true)
@@ -18,4 +18,24 @@ let ajaxQuery = new Promise(function(resolve, reject){
 			resolve(result)
 		})
 	})
-}).then(result => console.log(result))
+}).then(result => console.log(result))*/
+
+let ajaxQuery = new Promise(function(resolve, reject){
+	let xhr = new XMLHttpRequest()
+	xhr.open('GET', '/data.json', true)
+	xhr.send()
+	xhr.addEventListener('readystatechange', function(){
+	    if (xhr.readyState != 4) return
+		result = JSON.parse(xhr.responseText)
+		resolve(result)
+	})
+}).then(() => {return new Promise(function(resolve, reject){
+	let xhr = new XMLHttpRequest()
+	xhr.open('GET', '/data2.json', true)
+	xhr.send()
+	xhr.addEventListener('readystatechange', function(){
+	    if (xhr.readyState != 4) return
+		result = result.concat(JSON.parse(xhr.responseText))
+		resolve(result)
+	})
+})}).then(result => console.log(result))
